@@ -78,15 +78,21 @@ ul.meniu{
 #btn{
     width:250px;
     height:35px;
-    font-weight:bold;
-    background-color:#10bd44;
-    letter-spacing: 3px;
-    margin-left: 10px;
-    color: rgb(182, 29, 54);
-    border-radius: 20px;
-    border:none;
-    cursor:pointer;
+    margin-top: -100px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 } 
+
+#btn:hover {
+    background-color: crimson;
+    border-color: crimson;
+    color: #fff;
+  }
 
 
 .logo img {
@@ -120,7 +126,7 @@ li a{
     color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
 }
 li a:hover {
-    color: yellow; /* Change the color to your desired hover color */
+    color: yellow; 
   }
   
 button{
@@ -184,6 +190,52 @@ p em {
 }
 
 
+#Cauta {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  #Cauta h1 {
+    font-size: 24px;
+  }
+  
+  #Cauta label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  #Cauta select,
+  #Cauta input[type="number"],
+  #Cauta input[type="text"] {
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  #Cauta button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #Cauta button:hover {
+    background-color: crimson;
+    border-color: crimson;
+    color: #fff;
+  }
+  
+  
+
   
 #show-more {
     display: flex;
@@ -233,13 +285,11 @@ p em {
   .dropdown-content a:hover {
     background-color: #ddd;
   }
-  /* Styles for the hidden section */
 
 .hidden-section {
     display: none;
   }
   
-  /* Styles for the "Show More" button */
   
   #show-more {
     display: block;
@@ -253,7 +303,6 @@ p em {
     cursor: pointer;
   }
   
-  /* Styles for the visible state of the hidden section */
   
   .visible-section {
     display: block;
@@ -314,9 +363,31 @@ p em {
     font-size: 18px;
     font-weight: bold;
   }
+
+  .hidden-section main section ol {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  
+  .hidden-section main section li {
+    margin-bottom: 10px;
+    list-style-type: decimal;
+  }
+  
+
+  .hidden-section main section h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .hidden-section main section p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
   
   
-  /* Apply basic styling to the inputs and button */
 #Simulator div {
     margin-bottom: 10px;
   }
@@ -328,18 +399,25 @@ p em {
   }
   
   #Simulator button {
-    padding: 8px 16px;
-    background-color: #10bd44;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+    width:400px;
+    height:35px;
+    font:8px;
+    font-weight:bold;
+    background-color:#10bd44;
+    letter-spacing: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(182, 29, 54);
+    border-radius: 20px;
+    border:none;
+    cursor:pointer;
+    font-weight: bold;
   }
   
   #Simulator button:hover {
     background-color: #0d8e38;
   }
   
-  /* Style the result container */
   #rata-lunara-container {
     margin-top: 20px;
   }
@@ -393,8 +471,6 @@ p em {
       grid-template-columns: 1fr;
     }
   }
-  
-  /* Rest of your CSS code */
   
   
 
