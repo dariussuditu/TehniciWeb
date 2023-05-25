@@ -1,11 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var cautaButton = document.getElementById('btn');
+    
+    cautaButton.addEventListener('click', function() {
+      var urele = "https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme";
+      window.location.href = urele;
+    });
+  });
+
+document.addEventListener('DOMContentLoaded', function() {
     var showMoreButton = document.getElementById('show-more');
     var hiddenSections = document.querySelectorAll('.hidden-section');
     var isExpanded = false;
   
     showMoreButton.addEventListener('click', function() {
       if (isExpanded) {
-        // Compress the sections and change button text to "Show More"
         hiddenSections.forEach(function(section) {
           section.style.display = 'none';
         });
@@ -20,20 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
         isExpanded = true;
       }
     });
-  
-    // Add click event listeners to navbar items
+
+ 
+      
     var navbarItems = document.querySelectorAll('.meniu a');
     navbarItems.forEach(function(item) {
       item.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
+        event.preventDefault();
         if (!isExpanded) {
-          showMoreButton.click(); // Trigger "Show More" button click
+          showMoreButton.click(); 
           isExpanded = true;
         }
-        var targetSectionId = item.getAttribute('href').substring(1); // Get the target section ID
+        var targetSectionId = item.getAttribute('href').substring(1);
         var targetSection = document.getElementById(targetSectionId);
         if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to the target section
+          targetSection.scrollIntoView({ behavior: 'smooth' });
         }
       });
     });
@@ -53,13 +62,81 @@ document.addEventListener('DOMContentLoaded', function() {
       var perioadaFinantare = parseInt(perioadaFinantareSelect.value);
       var valoareAvans = parseFloat(valoareAvansInput.value);
   
-      // Calculate the monthly installment
       var avans = (valoareAvans / 100) * pretMasina;
       var sumaFinantata = pretMasina - avans;
       var rataLunara = sumaFinantata / perioadaFinantare;
   
-      // Display the result
-      rataLunaraContainer.textContent = 'Rata lunară: ' + rataLunara.toFixed(2) + ' lei';
+      var delay = 2000; 
+      var intervalId = setInterval(function() {
+      
+        rataLunaraContainer.textContent = 'Calculating...';
+  
+        clearInterval(intervalId);
+        setTimeout(function() {
+          rataLunaraContainer.textContent = 'Rata lunară: ' + rataLunara.toFixed(2) + ' euro';
+        }, delay);
+      }, delay);
+    });
+  });
+  
+
+  
+  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var searchButton = document.getElementById('search-button');
+    
+    searchButton.addEventListener('click', function() {
+        var marca = document.getElementById('marca').value;
+    
+        var pretDeLaSelect = document.getElementById('pret-de-la');
+        var pretDeLa = pretDeLaSelect.value;
+        if (pretDeLa === '') {
+          pretDeLa = document.getElementById('pret-de-la-custom').value;
+        }
+        
+        var pretPanaLaSelect = document.getElementById('pret-pana-la');
+        var pretPanaLa = pretPanaLaSelect.value;
+        if (pretPanaLa === '') {
+          pretPanaLa = document.getElementById('pret-pana-la-custom').value;
+        }
+        
+        var anFabricatieDeLaSelect = document.getElementById('an-fabricatie-de-la');
+        var anFabricatieDeLa = anFabricatieDeLaSelect.value;
+        if (anFabricatieDeLa === '') {
+          anFabricatieDeLa = document.getElementById('an-fabricatie-de-la-custom').value;
+        }
+        
+        var anFabricatiePanaLaSelect = document.getElementById('an-fabricatie-pana-la');
+        var anFabricatiePanaLa = anFabricatiePanaLaSelect.value;
+        if (anFabricatiePanaLa === '') {
+          anFabricatiePanaLa = document.getElementById('an-fabricatie-pana-la-custom').value;
+        }
+        
+        var combustibil = document.getElementById('combustibil').value;
+        
+        var kmDeLaSelect = document.getElementById('km-de-la');
+        var kmDeLa = kmDeLaSelect.value;
+        if (kmDeLa === '') {
+          kmDeLa = document.getElementById('km-de-la-custom').value;
+        }
+        
+        var kmPanaLaSelect = document.getElementById('km-pana-la');
+        var kmPanaLa = kmPanaLaSelect.value;
+        if (kmPanaLa === '') {
+          kmPanaLa = document.getElementById('km-pana-la-custom').value;
+        }
+        
+        marca = marca.toLowerCase();
+        combustibil = combustibil.toLowerCase();
+
+      if(combustibil=='BENZINA')
+        {
+            combustibil='petrol';
+        }
+      var searchUrl = `https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme/${marca}/?currency=EUR&search%5Bfilter_float_price:from%5D=${pretDeLa}&search%5Bfilter_float_price:to%5D=${pretPanaLa}&search%5Bfilter_float_year:from%5D=${anFabricatieDeLa}&search%5Bfilter_float_year:to%5D=${anFabricatiePanaLa}&search%5Bfilter_enum_petrol%5D%5B0%5D=${combustibil}&search%5Bfilter_float_rulaj_pana:from%5D=${kmDeLa}&search%5Bfilter_float_rulaj_pana:to%5D=${kmPanaLa}`;
+      
+      window.location.href = searchUrl;
     });
   });
   
