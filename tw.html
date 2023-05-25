@@ -27,7 +27,7 @@
                 <li><div><a href="#Detalii">Intrebari frecvente</a></div></li>
                 <li><a href="#Cauta">Autoturisme de Vanzare!</a></li>
                 <li><a href="#Simulator">Simulator</a></li> 
-                <li><a href="#Logare">Logare Utilizator</a></li> 
+                <li><a href="#Logare">Sondaj de Opinie</a></li> 
               </ul>
             </div>
           </div>
@@ -137,9 +137,8 @@
     
       
     <section id="Details" class="hidden-section">
-        <main>
             <section id="DespreNoi">
-                <h1>Despre Noi
+                <h1>Despre Noi</h1>
                     <p><em>
                         Bine ai venit la Darius Auto - dealerul tău de încredere pentru autoturisme! Situat pe Calea Rahovei 38, suntem aici să îți oferim o experiență unică în achiziționarea mașinii tale visate. La Darius Auto, găsești o gamă variată de autoturisme de înaltă calitate, atât noi, cât și second-hand, pentru a satisface toate preferințele și nevoile tale.
                         
@@ -152,7 +151,7 @@
                         La Darius Auto, ne mândrim cu servicii de înaltă calitate și satisfacția clienților noștri este prioritatea noastră. Vino și fă parte din familia noastră de clienți mulțumiți și experimentează plăcerea unei achiziții auto fără stres.
                         
                         Te așteptăm cu drag la Darius Auto pe Calea Rahovei 38!</em></p>
-                </h1>
+                
                 
                 
             
@@ -176,13 +175,16 @@
                 <div>
                   <label for="tip-masina">Tip mașină:</label>
                   <select id="tip-masina" required>
+                    <option value="" disabled selected>Select an option</option>
                     <option value="noua">Nouă</option>
                     <option value="second-hand">Second Hand</option>
                   </select>
+                  
                 </div>
                 <div>
                   <label for="perioada-finantare">Perioada finanțării (luni):</label>
                   <select id="perioada-finantare" required>
+                    <option value="" disabled selected>Select an option</option>
                     <option value="12">12</option>
                     <option value="24">24</option>
                     <option value="36">36</option>
@@ -230,23 +232,38 @@
                 </details>
               </section>
               
-              
-    
-            <section id="Logare">
-                <h2>Contul meu</h2>
-                <h3>Autentificare</h3>
-                <label>Utilizator <input type=“text” name=“client” pattern="[A-Z]"></label>
-                <br/><br/>
-                <label>Parola <input type=“password” name=“parola” maxlength=“15”></label>     
-                <br/><br/>
-                <button>Intra in cont</button>
-                <br/><br/><br/><br/>
-                <h3>Creaza un cont</h3>
-                <p><a href="https://moodle.unibuc.ro/login/index.php" target="_blank">Inregistrare</a></p>  
-            </section>
+            
             <br/><br/><br/><br/>
-        </main>
+            <section id="Tabel">
+                <h2>Cele mai noi oferte VOLKSWAGEN</h2>
+                <p id="p1"></p>
+                <br/><br/>
+                <button id="buton2">Selecteaza</button>
+                <button id="buton1">Sterge</button>
+                <br/><br/>
+            </section>
+            <br><br><br>
+            <section id="Logare">
+                <h1>Sondaj de opinie: Care este masina visurilor tale?</h1>
+                <br><br>
+                <form id="myForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required><br><br>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required><br><br>
+        
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" required><br><br>
+        
+                    <label for="dreamCar">Dream Car:</label>
+                    <input type="text" id="dreamCar" required><br><br>
+        
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
       </section>
+      
     
 
     <footer id="Contact">
