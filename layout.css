@@ -29,21 +29,13 @@ section{
     padding: 50px;
 }
 
-#container{
-    display: grid;
-    grid-template-areas: "z-Acasa z-Acasa"
-                        "z-Detalii z-Detalii"
-                        "z-Contul_meu z-Contul_meu"
-                        "z-Simulator z-Simulator";
-    grid-template-columns: 1fr 1fr;
-}
 
 
 ul.meniu{
     display: flex;
 }
 
-.container
+.containerbanner
 {
     width:100%;
     height:50vh;
@@ -61,17 +53,27 @@ ul.meniu{
 
 
 .banner-text{
-    padding-top:280px;
+    padding-top:80px;
     margin-left:50px;
 }
 
-.banner-text h1{
-    margin-left:5px;
-    margin-right:100px;
-    font-size:25px;
-    color:yellow;
-    
-}
+.banner-text h1 {
+    margin-left: 5px;
+    margin-right: 900px;
+    font-size: 25px;
+    color: yellow;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .banner-text h2 {
+    margin-left: 900px;
+    margin-right: 5px;
+    margin-top: -160px;
+    font-size: 25px;
+    color: yellow;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
 
 #btn{
     width:250px;
@@ -79,7 +81,7 @@ ul.meniu{
     font-weight:bold;
     background-color:#10bd44;
     letter-spacing: 3px;
-    margin-left: 1000px;
+    margin-left: 10px;
     color: rgb(182, 29, 54);
     border-radius: 20px;
     border:none;
@@ -98,7 +100,11 @@ ul.meniu{
     text-decoration: none;
 }
 .navbar{
-    background: rgb(143, 202, 239); font-family: calibri; padding-right: 15px;padding-left: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgb(81, 84, 220); font-family: calibri; padding-right: 15px;padding-left: 15px;
 }
 .navdiv{
     display: flex; align-items: center; justify-content: space-between;
@@ -107,6 +113,7 @@ ul.meniu{
     font-size: 35px; font-weight: 600; color: white;
 }
 li{
+    margin-right: 45px;
     list-style: none; display: inline-block;
 }
 li a{
@@ -124,7 +131,10 @@ button a{
 }
 
 
-
+.hidden-section {
+    display: none;
+  }
+  
 
 header{
     margin-left:var(--margine-main);
@@ -140,7 +150,25 @@ nav ul{
     margin:0;
 }
 
-
+p em {
+    font-style: italic;
+    color: #333;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  p:first-child {
+    margin-top: 0;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
 
 
 .gallery {
@@ -154,6 +182,221 @@ nav ul{
     margin-right: 10px;
     animation: galleryAnimation 10s infinite;
 }
+
+
+  
+#show-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: fit-content;
+    padding: 13px 30px;
+    border: 1px solid #334;
+    color: #334;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #show-more:hover {
+    background-color: crimson;
+    border-color: crimson;
+    color: #fff;
+  }
+  
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  /* Styles for the hidden section */
+
+.hidden-section {
+    display: none;
+  }
+  
+  /* Styles for the "Show More" button */
+  
+  #show-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Styles for the visible state of the hidden section */
+  
+  .visible-section {
+    display: block;
+  }
+  
+  /* Styles for the sections within the hidden section */
+  
+  .hidden-section main section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .hidden-section main section strong {
+    font-size: 24px;
+  }
+  
+  .hidden-section main section p {
+    margin: 10px 0;
+  }
+  
+  .hidden-section main section ol {
+    margin-top: 10px;
+  }
+  
+  .hidden-section main section li {
+    margin-bottom: 10px;
+  }
+  
+  .hidden-section main section label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .hidden-section main section input,
+  .hidden-section main section select {
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .hidden-section main section button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .hidden-section main section #rata-lunara {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  
+  /* Apply basic styling to the inputs and button */
+#Simulator div {
+    margin-bottom: 10px;
+  }
+  
+  #Simulator input[type="number"],
+  #Simulator select {
+    width: 150px;
+    padding: 5px;
+  }
+  
+  #Simulator button {
+    padding: 8px 16px;
+    background-color: #10bd44;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #Simulator button:hover {
+    background-color: #0d8e38;
+  }
+  
+  /* Style the result container */
+  #rata-lunara-container {
+    margin-top: 20px;
+  }
+  
+  #rata-lunara {
+    font-weight: bold;
+  }
+  
+  
+
+
+@media screen and (max-width: 1000px) {
+    ul.meniu {
+      display: none;
+      position: relative;
+      animation: animatie_meniu 0.7s linear 1;
+    }
+  
+    ul.meniu li {
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    #chk-meniu:checked ~ ul.meniu {
+      display: block;
+    }
+  
+    ul.meniu ul {
+      position: absolute;
+      z-index: 100;
+      width: 100%;
+    }
+  
+    ul.meniu ul li {
+      background-color: rgba(138, 198, 209, 1);
+    }
+  
+    #img_meniu {
+      height: var(--inaltime-meniu);
+      width: auto;
+      display: inline-block;
+    }
+  
+    #container {
+      grid-template-areas: "z-Acasa"
+                            "z-Detalii"
+                            "z-Simulator"
+                            "z-Logare";
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Rest of your CSS code */
+  
+  
 
 @keyframes galleryAnimation {
     0% {
